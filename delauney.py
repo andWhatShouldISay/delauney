@@ -154,6 +154,7 @@ def check(t1,t2):
 					sd=abs((x2-x1)*(y2-y3)-(x2-x3)*(y2-y1))
 
 					return sc*sb+sa*sd>=0	
+from random import choice
 			
 def work(t1,t2):
 	if t1 is None:
@@ -261,7 +262,9 @@ dfs(pts[0])
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
-ax.plot([p.x/60+25 for p in P], [p.y/60-123 for p in P], [p.z for p in P], 'r-',markersize=2)
+ax.set_xlabel('Longtitude')
+ax.set_ylabel('Latitude')
+ax.set_zlabel('Elevation')
+ax.plot([p.x/60-123 for p in P], [p.y/60+25 for p in P], [p.z for p in P], 'r-',markersize=2)
 
 plt.show()
-
